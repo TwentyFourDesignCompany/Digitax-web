@@ -151,7 +151,7 @@ export default function ContactUsScreen() {
                     Email
                   </div>
                   <div className="contact__main__section__left__social__para">
-                    info@digitaxgroup.com
+                    info@digitaxgroup.tax
                   </div>
                 </div>
               </div>
@@ -172,17 +172,23 @@ export default function ContactUsScreen() {
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
                 <div className="contact__main__section__left__social__heading__wrapper">
-                  <div className="contact__main__section__left__social__heading">
+                  {/* <div className="contact__main__section__left__social__heading">
                     Location
+                  </div> */}
+                  <div className="contact__main__section__left__social__para">
+                    <span>London Office:</span> UK: Registered Office: Digitax
+                    Group Limited, 20-22 Wenlock Road, London, England, N1 7GU
                   </div>
                   <div className="contact__main__section__left__social__para">
-                    20-22 Wenlock Road, London, N1 7GU
+                    <span>Nigeria Office:</span> Registered Office (Regional
+                    Head Office and Operations): First Floor, Providence House,
+                    15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria
                   </div>
                 </div>
               </div>
               <div className="footer__main__container__content__entry__wrapper__social__wrapper">
                 <a
-                  href=""
+                  href="https://www.facebook.com/Digitax-105406545337206"
                   className="footer__main__container__content__entry__wrapper__social"
                 >
                   <svg
@@ -207,7 +213,7 @@ export default function ContactUsScreen() {
                   </svg>
                 </a>
                 <a
-                  href=""
+                  href="https://twitter.com/Digitax6"
                   className="footer__main__container__content__entry__wrapper__social"
                 >
                   <svg

@@ -98,13 +98,19 @@ export default function Footer() {
           <div className="footer__overlay__content__col__heading">
             Socail Media
           </div>
-          <a href="#about" className="footer__overlay__content__col__entry">
+          <a
+            href="https://www.facebook.com/Digitax-105406545337206"
+            className="footer__overlay__content__col__entry"
+          >
             Facebook
           </a>
-          <a href="#about" className="footer__overlay__content__col__entry">
+          <a
+            href="https://twitter.com/Digitax6"
+            className="footer__overlay__content__col__entry"
+          >
             Twitter
           </a>
-          <a href="#about" className="footer__overlay__content__col__entry">
+          <a href="#" className="footer__overlay__content__col__entry">
             Instagram
           </a>
         </div>

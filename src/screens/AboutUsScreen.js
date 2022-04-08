@@ -89,25 +89,36 @@ export default function AboutUsScreen() {
       </div>
       <div className="service__main__section__more__about">
         <div className="service__main__section__more__about__para">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          eget sem lectus. Donec ac arcu ut sem efficitur consectetur eget quis
-          nisl. Nulla facilisis orci lorem, sit amet tempus neque aliquam quis.
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-          per inceptos himenaeos. Vestibulum sit amet justo semper, euismod
-          libero eget, tincidunt orci. Sed a felis diam. Donec luctus, magna
-          eget semper tristique, ligula quam suscipit ex, at venenatis neque mi
-          quis justo Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos. Vestibulum sit amet justo semper,
-          euismod libero eget, tincidunt orci. Sed a felis diam. Donec luctus,
-          magna eget semper tristique, ligula quam suscipit ex, at venenatis
-          neque mi quis justo Class aptent taciti sociosqu ad litora torquent
-          per conubia nostra, per inceptos himenaeos. Vestibulum sit amet justo
-          semper, euismod libero eget, tincidunt orci. Sed a felis diam. Donec
-          luctus, magna eget semper tristique, ligula quam suscipit ex, at
-          venenatis neque mi quis justo
+          Digitax Group Limited, as a thought leader in Africa, is disrupting
+          this marketplace by automating the fiscal representation process and
+          offering numerous risk- mitigated, automated services around it, such
+          as compliance and testing automation, payments facilitation, and
+          support services to facilitate the timely payment of VAT by SMEs and
+          MNCs.
+        </div>
+        <div className="service__main__section__more__about__para">
+          This enables merchants to be more easily comply with tax regulations
+          whilst reducing their administrative burden and cost of compliance.
+        </div>
+        <div className="service__main__section__more__about__para">
+          Tax authorities in turn need a trusted intermediary such as Digitax
+          with which to work and through which these taxes can be collected and
+          the relationship with the taxpayer more efficiently managed.
+        </div>
+        <div className="service__main__section__more__about__para">
+          As this initiative grows, Digitax is becoming the trusted partner for
+          each merchant providing the necessary support to the merchants and the
+          confidence to the tax authority that SMEs/MNCs are operating within a
+          system that is systemically compliant in nature.
+        </div>
+        <div className="service__main__section__more__about__para">
+          Digitax’s management team has the credibility to lead this compliance
+          ecosystem, which includes Tax authorities, channel partners
+          (accounting firms, law firms, specialist consultants) and platforms,
+          alongside the end user merchants, into a compliant win-win position.
         </div>
       </div>
-      <div className="our__founder__main__section">
+      {/* <div className="our__founder__main__section">
         <div className="our__founder__main__section__content">
           <div className="our__founder__main__section__content__left">
             <img
@@ -148,7 +159,7 @@ export default function AboutUsScreen() {
         >
           Join Us
         </button>
-      </div>
+      </div> */}
       <div className="testnomials__main__section">
         <div className="testnomials__main__section__heading">Testimonials</div>
         <div className="testnomials__main__section__content">

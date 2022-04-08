@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../component/Header";
 import main__bg from "../assets/main__bg.png";
-import affliatePic from "../assets/affliatePic.png";
 import thumb from "../assets/thumb.png";
 import transparent from "../assets/transparent.png";
 import trust from "../assets/trust.png";
@@ -13,8 +12,9 @@ import SubscribeSection from "../component/SubscribeSection";
 import TrustCard from "../component/TrustCard";
 import "animate.css";
 import Footer from "../component/Footer";
+import { Link } from "react-router-dom";
 
-function ServicesCard({ title, para, btnText, noSvg }) {
+function ServicesCard({ title, para, btnText, noSvg, path }) {
   return (
     <div className="service__main__section__overay__contant__card">
       <img
@@ -155,9 +155,18 @@ function ServicesCard({ title, para, btnText, noSvg }) {
         <div className="service__main__section__overay__contant__card__para">
           {para}
         </div>
-        <button className="service__main__section__overay__contant__card__btn">
-          {btnText ? btnText : "Get Started"}{" "}
-        </button>
+        <Link
+          to={path ? path : "/"}
+          onClick={() => {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+          }}
+          className="service__main__section__overay__contant__card__btn"
+        >
+          {btnText ? btnText : "Read More"}{" "}
+        </Link>
       </div>
     </div>
   );
@@ -246,30 +255,22 @@ export default function HomeScreen() {
           <TrustCard
             img={trust}
             title="Trusted"
-            para="  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          deserunt laudantium vitae, numquam dolorum doloribus nihil
-          dignissimos"
+            para="Digitax is your trusted partner to provide necessary support for your tax operations."
           />
           <TrustCard
             img={transparent}
             title="Transparent"
-            para="  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          deserunt laudantium vitae, numquam dolorum doloribus nihil
-          dignissimos "
+            para=" As part of the pillars of our organisation, we make sure to be transparent at every step of our tax processes."
           />
           <TrustCard
             img={trust}
-            title="Creditablilty"
-            para="  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          deserunt laudantium vitae, numquam dolorum doloribus nihil
-          dignissimos iusto "
+            title="Credibility"
+            para="Digitax is a thought leader in fiscal representation in Africa. We have the credibility to lead the compliance ecosystem."
           />
           <TrustCard
             img={thumb}
             title="Convenient"
-            para="  Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet
-          deserunt laudantium vitae, numquam dolorum doloribus nihil
-          dignissimos iusto "
+            para=" We make every process and steps easy by offering risk mitigated and automated service."
           />
         </div>
       </div>
@@ -283,14 +284,12 @@ export default function HomeScreen() {
         </div>
       </div> */}
       <div className="services__main__section">
-        <div className="services__main__section__heading">
-          Moving to Services
-        </div>
-        <div className="services__main__section__para">
+        <div className="services__main__section__heading">Our Services</div>
+        {/* <div className="services__main__section__para">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
           risus leo, fringilla vel placerat a, sollicitudin a lacus. Suspendisse
           condimentum vitae nunc ac auctor.
-        </div>
+        </div> */}
         <img
           src={service_bg}
           alt="service_bg"
@@ -299,18 +298,18 @@ export default function HomeScreen() {
         <div className="service__main__section__overay">
           <div className="service__main__section__overay__contant">
             <ServicesCard
+              path="/services-facial-representation"
               title="Fiscal Representation"
-              para="Digitax, as a thought leader, is disrupting this marketplace by
-          automating the fiscal representation process and offering
-          numerous risk- mitigated, automated services around it, such as
-          compliance & testing automation, payments facilitation,"
+              para="Fiscal representation is the act of representing a non-established organisation to the respective tax authority."
             />
             <ServicesCard
+              path="/services"
               title="IMPORT ONE STOP SHOP"
               para=" This is the European Union’s new VAT regime for low value B2C packages under €150.
               Through our online platform we help you manage the registration, ongoing compliance and even the monthly payment"
             />
             <ServicesCard
+              path="/services-taxpay"
               title="TAX PAYMENT"
               para="  Digitax, as a thought leader, is disrupting this marketplace by
           automating the fiscal representation process and offering
@@ -320,6 +319,7 @@ export default function HomeScreen() {
           compliance & testing automation, payments facilitation,"
             />
             <ServicesCard
+              path="/services-partnerships"
               title="LET'S EXPLORE"
               btnText="View More"
               noSvg={true}
@@ -391,7 +391,7 @@ export default function HomeScreen() {
                     Email
                   </div>
                   <div className="contact__main__section__left__social__para">
-                    info@digitaxgroup.com
+                    info@digitaxgroup.tax
                   </div>
                 </div>
               </div>
@@ -412,17 +412,23 @@ export default function HomeScreen() {
                   <circle cx="12" cy="10" r="3"></circle>
                 </svg>
                 <div className="contact__main__section__left__social__heading__wrapper">
-                  <div className="contact__main__section__left__social__heading">
+                  {/* <div className="contact__main__section__left__social__heading">
                     Location
+                  </div> */}
+                  <div className="contact__main__section__left__social__para">
+                    <span>London Office:</span> UK: Registered Office: Digitax
+                    Group Limited, 20-22 Wenlock Road, London, England, N1 7GU
                   </div>
                   <div className="contact__main__section__left__social__para">
-                    20-22 Wenlock Road, London, N1 7GU
+                    <span>Nigeria Office:</span> Registered Office (Regional
+                    Head Office and Operations): First Floor, Providence House,
+                    15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria
                   </div>
                 </div>
               </div>
               <div className="footer__main__container__content__entry__wrapper__social__wrapper">
                 <a
-                  href=""
+                  href="https://www.facebook.com/Digitax-105406545337206"
                   className="footer__main__container__content__entry__wrapper__social"
                 >
                   <svg
@@ -447,7 +453,7 @@ export default function HomeScreen() {
                   </svg>
                 </a>
                 <a
-                  href=""
+                  href="https://twitter.com/Digitax6"
                   className="footer__main__container__content__entry__wrapper__social"
                 >
                   <svg
