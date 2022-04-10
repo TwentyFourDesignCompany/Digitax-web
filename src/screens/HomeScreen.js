@@ -190,11 +190,7 @@ export default function HomeScreen() {
                 <span>VAT by SME's & MNC's</span>
               </div>
               <div className="home__main__container__para ">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Molestiae aspernatur accusantium modi voluptatum atque sequi
-                optio! Animi iusto nulla voluptate, ex ab, neque quos quod
-                beatae, sit tenetur ducimus omnis. Eius, officia quis distinctio
-                architecto iusto consequatur? Quas, dolorem doloremque?
+              Digitax is the trusted partner providing the necessary support to merchants and the confidence to the tax authority that SMEs/MNCs are operating within a system that is systematically compliant in nature.
               </div>
               <button
                 style={{ width: 160, justifyContent: "center" }}

@@ -25,8 +25,10 @@ export default function Footer() {
             /> */}
           </Link>
           <div className="footer__overlay__content__col__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui,
-            tempora
+            Digitax is the trusted partner providing the necessary support to
+            merchants and the confidence to the tax authority that SMEs/MNCs are
+            operating within a system that is systematically compliant in
+            nature.
           </div>
         </div>
         <div className="footer__overlay__content__col">
