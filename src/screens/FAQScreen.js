@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import NewsSection from "../component/NewsSection";
 import Footer from "../component/Footer";
@@ -7,85 +7,56 @@ import faq_bg from "../assets/faq_bg.png";
 import guarantee from "../assets/guarantee.png";
 import user from "../assets/user.png";
 import Faq from "react-faq-component";
-
-const IOSS = {
-  title: "IOSS",
-  rows: [
-    {
-      title:
-        "Lorem ipsum dolor sit amet, Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,Lorem ipsum dolor sit amet,",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-    {
-      title: "Nunc maximus, magna at ultricies elementum",
-      content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam.Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-    {
-      title: "Lorem ipsum dolor sit amet,",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-    {
-      title: "Nunc maximus, magna at ultricies elementum",
-      content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam.Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-  ],
-};
-const FiscalRepresentation = {
-  title: "Fiscal Representation",
-  rows: [
-    {
-      title: "Lorem ipsum dolor sit amet,",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consectetur ",
-    },
-    {
-      title: "Nunc maximus, magna at ultricies elementum",
-      content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam.Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-    {
-      title: "Nunc maximus, magna at ultricies elementum",
-      content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam.Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-  ],
-};
-const Taxpay = {
-  title: "Taxpay",
-  rows: [
-    {
-      title: "Lorem ipsum dolor sit amet,",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-    {
-      title: "Nunc maximus, magna at ultricies elementum",
-      content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam. Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-  ],
-};
-const Partnerships = {
-  title: "Partnerships",
-  rows: [
-    {
-      title: "Lorem ipsum dolor sit amet,",
-      content:
-        "Lorem ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-    {
-      title: "Nunc maximus, magna at ultricies elementum",
-      content:
-        "Nunc maximus, magna at ultricies elementum, risus turpis vulputate quam. Lorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consecteturLorem ipsum dolor sit amet, consectetur",
-    },
-  ],
-};
-
+import axios from 'axios'
+import {URL} from '../component/baseUrl'
 export default function FAQScreen() {
+  const [ioss, setioss] = useState([])
+  const [fiscal, setfiscal] = useState([])
+  const [tax, settax] = useState([])
+  const [partner, setpartner] = useState([])
+  useEffect(() => {
+    axios.get(`${URL}/faq/title/IOSS`)
+    .then((res) => setioss(res.data))
+    .catch((e) => console.log(e))
+    axios.get(`${URL}/faq/title/Fiscal Representation`)
+    .then((res) => setfiscal(res.data))
+    .catch((e) => console.log(e))
+    axios.get(`${URL}/faq/title/Taxpay`)
+    .then((res) => settax(res.data))
+    .catch((e) => console.log(e))
+    axios.get(`${URL}/faq/title/Partnerships`)
+    .then((res) => setpartner(res.data))
+    .catch((e) => console.log(e))
+    
+  }, [])  
+  const IOSS = {
+    title: "IOSS",
+    rows: ioss?.map((values) => ({
+      title: values?.question,
+      content: values?.answer,
+    })),
+  };
+  const FiscalRepresentation = {
+    title: "Fiscal Representation",
+    rows: fiscal?.map((values) => ({
+      title: values?.question,
+      content: values?.answer,
+    })),
+  };
+  const Taxpay = {
+    title: "Taxpay",
+    rows: tax?.map((values) => ({
+      title: values?.question,
+      content: values?.answer,
+    })),
+  };
+  const Partnerships = {
+    title: "Partnerships",
+    rows: partner?.map((values) => ({
+      title: values?.question,
+      content: values?.answer,
+    })),
+  };
   return (
     <>
       <Header />

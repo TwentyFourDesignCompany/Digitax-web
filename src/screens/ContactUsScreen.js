@@ -1,16 +1,18 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import NewsSection from "../component/NewsSection";
 import Footer from "../component/Footer";
 import SubscribeSection from "../component/SubscribeSection";
 import contact_main_bg from "../assets/contact_main_bg.png";
-import call from "../assets/call.png";
-import email from "../assets/email.png";
-import location from "../assets/location.png";
+// import call from "../assets/call.png";
+// import email from "../assets/email.png";
+// import location from "../assets/location.png";
 import contact_bg from "../assets/contact_bg.png";
 import user from "../assets/user.png";
-
+import axios from 'axios'
+import {URL} from '../component/baseUrl'
 function TestimonialCard() {
+
   return (
     <div className="testnomials__main__section__content__card">
       <div className="testnomials__main__section__content__card__img__wrapper">
@@ -67,6 +69,13 @@ function TestimonialCard() {
 }
 
 export default function ContactUsScreen() {
+  const [data, setData] = useState([])
+  useEffect(() => {
+    axios.get(`${URL}/contact`)
+      .then((res) => setData(res.data))
+      .catch((e) => console.log(e))
+  }, [])
+  console.log(data)
   return (
     <>
       <Header />
@@ -82,8 +91,7 @@ export default function ContactUsScreen() {
               CONTACT US
             </div>
             <div className="service__main__section__overlay__content__para">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec
-              quis purus molestie, laoreet ipsum at,
+              {data[0]?.paragraph1}
             </div>
             <a href="#contact" className="nav__header__link__btn__filled">
               Contact US
@@ -101,10 +109,10 @@ export default function ContactUsScreen() {
           <div className="contact__main__section__overlay__content">
             <div className="contact__main__section__left">
               <div className="contact__main__section__left__heading">
-                Get in touch with us!
+              {data[0]?.heading}
               </div>
               <div className="contact__main__section__left__para">
-                Lorem ipsum, dolor sit amet consectetur adipisicing.
+              {data[0]?.paragraph2}              
               </div>
               <div className="contact__main__section__left__social">
                 <svg
@@ -126,7 +134,7 @@ export default function ContactUsScreen() {
                     Call
                   </div>
                   <div className="contact__main__section__left__social__para">
-                    084524145547
+                  {data[0]?.phone}
                   </div>
                 </div>
               </div>
@@ -151,7 +159,7 @@ export default function ContactUsScreen() {
                     Email
                   </div>
                   <div className="contact__main__section__left__social__para">
-                    info@digitaxgroup.tax
+                  {data[0]?.email}
                   </div>
                 </div>
               </div>
@@ -176,13 +184,7 @@ export default function ContactUsScreen() {
                     Location
                   </div> */}
                   <div className="contact__main__section__left__social__para">
-                    <span>London Office:</span> UK: Registered Office: Digitax
-                    Group Limited, 20-22 Wenlock Road, London, England, N1 7GU
-                  </div>
-                  <div className="contact__main__section__left__social__para">
-                    <span>Nigeria Office:</span> Registered Office (Regional
-                    Head Office and Operations): First Floor, Providence House,
-                    15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria
+                    {data[0]?.address}
                   </div>
                 </div>
               </div>

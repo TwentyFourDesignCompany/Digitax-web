@@ -1,0 +1,1 @@
+export const URL = 'https://dashboard.cyclic.cloud/api/v1'

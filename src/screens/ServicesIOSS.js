@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import NewsSection from "../component/NewsSection";
 import Footer from "../component/Footer";
@@ -6,6 +6,8 @@ import SubscribeSection from "../component/SubscribeSection";
 import services_bg from "../assets/services_bg.png";
 import guarantee from "../assets/guarantee.png";
 import user from "../assets/user.png";
+import axios from "axios";
+import { URL } from "../component/baseUrl";
 
 function TestimonialCard() {
   return (
@@ -63,14 +65,12 @@ function TestimonialCard() {
   );
 }
 
-function HowtoCard({ value }) {
+function HowtoCard({ value,paragraph }) {
   return (
     <div className="how__work__section__content__card">
       <div className="how__work__section__content__card__cirle">{value}</div>
       <div className="how__work__section__content__card__para">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempora,
-        aspernatur nobis ut est in id commodi quaerat. Lorem ipsum dolor sit
-        amet consectetur, adipisicing elit. Tempora.
+        {paragraph}
       </div>
     </div>
   );
@@ -101,6 +101,22 @@ function HasselCard() {
 }
 
 export default function ServicesIOSS() {
+  const [iossTop, setIossTop] = useState([])
+  const [iossQuestion, setiossQuestion] = useState([])
+  const [work, setwork] = useState([])
+  useEffect(() => {
+    axios.get(`${URL}/ioss/text/IOSS`)
+      .then((res) => setIossTop(res.data))
+      .catch((e) => console.log(e))
+    axios.get(`${URL}/ioss/question/IOSS`)
+      .then((res) => setiossQuestion(res.data))
+      .catch((e) => console.log(e))
+    axios.get(`${URL}/work/role/IOSS`)
+      .then((res)=>setwork(res.data))
+      .catch((e)=>console.log(e))
+  }, [])
+
+
   return (
     <>
       <Header />
@@ -113,11 +129,11 @@ export default function ServicesIOSS() {
         <div className="service__main__section__overlay">
           <div className="service__main__section__overlay__content">
             <div className="service__main__section__overlay__content__heading">
-              IMPORT ONE STOP SHOP (IOSS)
+              {iossTop[0]?.heading}
             </div>
             <div className="service__main__section__overlay__content__para">
-              IOSS makes it easier than ever to sell your products in the
-              world’s largest trading bloc.
+              {iossTop[0]?.paragraph}
+
             </div>
             <button className="nav__header__link__btn__filled">
               Get a Quote
@@ -126,19 +142,22 @@ export default function ServicesIOSS() {
         </div>
       </div>
       <div className="service__main__section__more__about">
-        <div className="service__main__section__more__about__heading">
-          What is IOSS and why do you need it?
-        </div>
-        <div className="service__main__section__more__about__para">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          eget sem lectus. Donec ac arcu ut sem efficitur consectetur eget quis
-          nisl. Nulla facilisis orci lorem, sit amet tempus neque aliquam quis.
-          Class aptent taciti sociosqu ad litora torquent per conubia nostra,
-          per inceptos himenaeos. Vestibulum sit amet justo semper, euismod
-          libero eget, tincidunt orci. Sed a felis diam. Donec luctus, magna
-          eget semper tristique, ligula quam suscipit ex, at venenatis neque mi
-          quis justo
-        </div>
+        {
+          iossQuestion.map((i, index) => {
+            return (
+              <div key={index}>
+                <div className="service__main__section__more__about__heading">
+                  {i?.question}
+                </div>
+                <div className="service__main__section__more__about__para">
+                  {i?.answer}
+                </div>
+
+
+              </div>
+            )
+          })
+        }
         <div className="service__main__section__more__about__heading">
           How can our IOSS service help you?
         </div>
@@ -156,10 +175,13 @@ export default function ServicesIOSS() {
       <div className="how__work__section">
         <div className="how__work__section__heading">How Does it work?</div>
         <div className="how__work__section__content">
-          <HowtoCard value="1" />
-          <HowtoCard value="2" />
-          <HowtoCard value="3" />
-          <HowtoCard value="4" />
+          {
+            work?.map((i,index)=>{
+              return (
+                <HowtoCard value={index+1} paragraph={i.paragraph} />
+              )
+            })
+          }
         </div>
       </div>
       <div className="testnomials__main__section">

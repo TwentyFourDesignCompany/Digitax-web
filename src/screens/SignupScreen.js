@@ -20,10 +20,8 @@ export default function Login() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
   const [companyName, setCompanyName] = useState("");
   const [phone, setPhone] = useState("");
-  const [industry, setIndustry] = useState("");
   const [displayName, setDisplayName] = useState("");
   const [selectedOption, setSelectedOption] = useState(null);
   const [errorName, setErrorName] = useState(false);
@@ -34,7 +32,6 @@ export default function Login() {
   const [errorPasswordMessage, setErrorPasswordMessage] = useState("");
   const [errorConfirmPasswordMessage, setErrorConfirmPasswordMessage] =
     useState("");
-  const [errorIndustry, setErrorIndustry] = useState(false);
   const [errorIndustryMessage, setErrorIndustryMessage] = useState("");
   const [errorPhone, setErrorPhone] = useState(false);
   const [errorPhoneMessage, setErrorPhoneMessage] = useState("");

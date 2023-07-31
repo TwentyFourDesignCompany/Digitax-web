@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../component/Header";
 import main__bg from "../assets/main__bg.png";
 import thumb from "../assets/thumb.png";
@@ -13,8 +13,11 @@ import TrustCard from "../component/TrustCard";
 import "animate.css";
 import Footer from "../component/Footer";
 import { Link } from "react-router-dom";
+import axios from 'axios'
+import { URL } from "../component/baseUrl";
 
 function ServicesCard({ title, para, btnText, noSvg, path }) {
+
   return (
     <div className="service__main__section__overay__contant__card">
       <img
@@ -173,6 +176,12 @@ function ServicesCard({ title, para, btnText, noSvg, path }) {
 }
 
 export default function HomeScreen() {
+  const [data, setData] = useState([])
+  useEffect(() => {
+    axios.get(`${URL}/home`)
+      .then((res) => setData(res.data))
+      .catch((e) => console.log(e))
+  }, [])
   return (
     <>
       <Header />
@@ -186,11 +195,11 @@ export default function HomeScreen() {
           <div className="home__main__container__overlay__content">
             <div className="home__main__container__left ">
               <div className="home__main__container__heading ">
-                Digitax is a company that facilitates the timely payments
-                <span>VAT by SME's & MNC's</span>
+                {data[0]?.title1}
+                <span>{data[0]?.vate}</span>
               </div>
               <div className="home__main__container__para ">
-              Digitax is the trusted partner providing the necessary support to merchants and the confidence to the tax authority that SMEs/MNCs are operating within a system that is systematically compliant in nature.
+                {data[0]?.paragraph1}
               </div>
               <button
                 style={{ width: 160, justifyContent: "center" }}
@@ -201,41 +210,19 @@ export default function HomeScreen() {
             </div>
           </div>
         </div>
-        {/* <img
-          src={main_bg}
-          alt="main_bg"
-          className="home__main__container__img"
-        /> */}
+
       </div>
 
       <div className="intro__main__container  animate__animated animate__fadeInRight animate__delay-1s">
         <div className="intro__main__container__contant">
           <div className="intro__main__container__contant__sub__heading">
-            Affiliate Network in <span>35+</span> Countries
+            {data[0]?.affilate}
           </div>
           <div className="intro__main__container__contant__heading">
-            Digitax, As A Thought Leader, Is Disrupting This Marketplace By
-            Automating The Fiscal Representation Process And Offering Numerous
-            Risk- Mitigated, Automated Services Around It, Such As Compliance &
-            Testing Automation, Payments Facilitation, And Support Services To
-            Facilitate The Timely Payment Of VAT By Smes And Mncs.
+            {data[0]?.title2}
           </div>
           <div className="intro__main__container__contant__para">
-            This enables merchants to more easily comply with tax regulations
-            whilst reducing their administrative burden and cost of compliance.
-            Tax authorities in turn need a trusted intermediary such as Digitax
-            with which to work and through which these taxes can be collected
-            and the relationship with the taxpayer more efficiently managed. As
-            this initiative grows, Digitax is becoming the trusted partner for
-            each merchant providing the necessary support to the merchants and
-            the confidence to the tax authority that SMEs/MNCs are operating
-            within a system that is systemically compliant in nature.
-            <br />
-            Digitax’s management team has the credibility to lead this
-            compliance ecosystem, which includes Tax authorities, channel
-            partners (accounting firms, law firms, specialist consultants), and
-            platforms, alongside the end-user merchants, into a compliant
-            win-win position.
+            {data[0]?.paragraph2}
           </div>
         </div>
       </div>
@@ -270,22 +257,10 @@ export default function HomeScreen() {
           />
         </div>
       </div>
-      {/* <div className="more__trusted__main__section">
-        <div className="more__trusted__main__section__heading">
-          Trusted by more than 2k Client
-        </div>
-        <div className="more__trusted__main__section__para">
-          Our mission is to help your business grow, especially financially. You
-          can consult anytime
-        </div>
-      </div> */}
+
       <div className="services__main__section">
         <div className="services__main__section__heading">Our Services</div>
-        {/* <div className="services__main__section__para">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-          risus leo, fringilla vel placerat a, sollicitudin a lacus. Suspendisse
-          condimentum vitae nunc ac auctor.
-        </div> */}
+
         <img
           src={service_bg}
           alt="service_bg"
