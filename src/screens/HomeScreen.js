@@ -16,12 +16,12 @@ import { Link } from "react-router-dom";
 import axios from 'axios'
 import { URL } from "../component/baseUrl";
 
-function ServicesCard({ title, para, btnText, noSvg, path }) {
+function ServicesCard({ title, para, btnText, noSvg, path,image }) {
 
   return (
     <div className="service__main__section__overay__contant__card">
       <img
-        src={servicesPic4}
+        src={image}
         alt="servicesPic"
         className="service__main__section__overay__contant__card__img"
       />
@@ -177,9 +177,13 @@ function ServicesCard({ title, para, btnText, noSvg, path }) {
 
 export default function HomeScreen() {
   const [data, setData] = useState([])
+  const [testi, setTesti] = useState([])
   useEffect(() => {
     axios.get(`${URL}/home`)
       .then((res) => setData(res.data))
+      .catch((e) => console.log(e))
+      axios.get(`${URL}/service`)
+      .then((res) => setTesti(res?.data))
       .catch((e) => console.log(e))
   }, [])
   return (
@@ -268,36 +272,20 @@ export default function HomeScreen() {
         />
         <div className="service__main__section__overay">
           <div className="service__main__section__overay__contant">
-            <ServicesCard
-              path="/services-facial-representation"
-              title="Fiscal Representation"
-              para="Fiscal representation is the act of representing a non-established organisation to the respective tax authority."
-            />
-            <ServicesCard
-              path="/services"
-              title="IMPORT ONE STOP SHOP"
-              para=" This is the European Union’s new VAT regime for low value B2C packages under €150.
-              Through our online platform we help you manage the registration, ongoing compliance and even the monthly payment"
-            />
-            <ServicesCard
-              path="/services-taxpay"
-              title="TAX PAYMENT"
-              para="  Digitax, as a thought leader, is disrupting this marketplace by
-          automating the fiscal representation process and offering
-          numerous risk- mitigated, automated services around it, such as
-          automating the fiscal representation process and offering
-          numerous risk- mitigated, automated services around it, such as
-          compliance & testing automation, payments facilitation,"
-            />
-            <ServicesCard
-              path="/services-partnerships"
-              title="LET'S EXPLORE"
-              btnText="View More"
-              noSvg={true}
-              para="  Digitax, as a thought leader, is disrupting this marketplace by
-          automating the fiscal representation process and offering
-          numerous risk,"
-            />
+            {
+              testi.map((i,index)=>{
+                return(
+                  <ServicesCard
+                    path="/services-facial-representation"
+                    title={i?.heading}
+                    para={i?.paragraph}
+                    image={i?.image}
+                  />
+
+                )
+              })
+            }
+          
           </div>
         </div>
       </div>

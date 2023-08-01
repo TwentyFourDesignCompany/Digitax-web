@@ -1,1 +1,1 @@
-export const URL = 'https://dashboard.cyclic.cloud/api/v1'
+export const URL = 'https://weak-toad-threads.cyclic.cloud/api/v1'

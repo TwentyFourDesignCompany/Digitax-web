@@ -13,23 +13,16 @@ import TrustCard from "../component/TrustCard";
 import axios from "axios";
 import { URL } from "../component/baseUrl";
 
-function TestimonialCard() {
+function TestimonialCard(image, message, name) {
+
   return (
+
     <div className="testnomials__main__section__content__card">
       <div className="testnomials__main__section__content__card__img__wrapper">
-        <img
-          src={user}
-          alt="user"
-          className="testnomials__main__section__content__card__img"
-        />
+        <img src={image?.image} alt="user" className="testnomials__main__section__content__card__img" />
       </div>
       <div className="testnomials__main__section__content__card__para">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="31.2"
-          height="27.3"
-          viewBox="0 0 31.2 27.3"
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="31.2" height="27.3" viewBox="0 0 31.2 27.3">
           <path
             id="Icon_awesome-quote-left"
             data-name="Icon awesome-quote-left"
@@ -38,9 +31,7 @@ function TestimonialCard() {
             fill="#fe2118"
           />
         </svg>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus eget
-        sem lectus. Donec ac arcu ut sem efficitur consectetur eget quis nisl.
-        Nulla facilisis orci lorem, sit amet tempus neque aliquam quis.
+        {image.message}
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="31.201"
@@ -63,9 +54,12 @@ function TestimonialCard() {
         </svg>
       </div>
       <div className="testnomials__main__section__content__card__title">
-        Johny laze
+        {image?.name}
       </div>
+
+
     </div>
+
   );
 }
 
@@ -108,6 +102,7 @@ export default function ServicesFacialRepresentation() {
   const [iossTop, setIossTop] = useState([])
   const [iossQuestion, setiossQuestion] = useState([])
   const [work, setwork] = useState([])
+  const [testi, setTesti] = useState([])
 
   useEffect(() => {
     axios.get(`${URL}/ioss/text/Fiscal Representation`)
@@ -119,6 +114,9 @@ export default function ServicesFacialRepresentation() {
       axios.get(`${URL}/work/role/Fiscal Representation`)
       .then((res)=>setwork(res.data))
       .catch((e)=>console.log(e))
+      axios.get(`${URL}/testimonial`)
+      .then((res) => setTesti(res?.data))
+      .catch((e) => console.log(e))
   }, [])
   return (
     <>
@@ -188,13 +186,17 @@ export default function ServicesFacialRepresentation() {
       </div>
     </div>
     <div className="testnomials__main__section">
-      <div className="testnomials__main__section__heading">Testimonials</div>
-      <div className="testnomials__main__section__content">
-        <TestimonialCard />
-        <TestimonialCard />
-        <TestimonialCard />
+        <div className="testnomials__main__section__heading">Testimonials</div>
+        <div className="testnomials__main__section__content" >
+          {
+            testi?.map((i, index) => {
+              return (
+                <TestimonialCard name={i?.name} image={i?.image} message={i?.message} />
+              )
+            })
+          }
+        </div>
       </div>
-    </div>
     <NewsSection />
     <SubscribeSection />
     <Footer />
