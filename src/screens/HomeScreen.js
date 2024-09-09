@@ -13,11 +13,11 @@ import TrustCard from "../component/TrustCard";
 import "animate.css";
 import Footer from "../component/Footer";
 import { Link } from "react-router-dom";
-import axios from 'axios'
+import axios from "axios";
 import { URL } from "../component/baseUrl";
-
-function ServicesCard({ title, para, btnText, noSvg, path,image }) {
-
+import { services } from "../component/services";
+import first from "../assets/first.jpg";
+function ServicesCard({ title, para, btnText, noSvg, path, image }) {
   return (
     <div className="service__main__section__overay__contant__card">
       <img
@@ -176,16 +176,18 @@ function ServicesCard({ title, para, btnText, noSvg, path,image }) {
 }
 
 export default function HomeScreen() {
-  const [data, setData] = useState([])
-  const [testi, setTesti] = useState([])
+  const [data, setData] = useState([]);
+  const [testi, setTesti] = useState([]);
   useEffect(() => {
-    axios.get(`${URL}/home`)
+    axios
+      .get(`${URL}/home`)
       .then((res) => setData(res.data))
-      .catch((e) => console.log(e))
-      axios.get(`${URL}/service`)
+      .catch((e) => console.log(e));
+    axios
+      .get(`${URL}/service`)
       .then((res) => setTesti(res?.data))
-      .catch((e) => console.log(e))
-  }, [])
+      .catch((e) => console.log(e));
+  }, []);
   return (
     <>
       <Header />
@@ -205,16 +207,16 @@ export default function HomeScreen() {
               <div className="home__main__container__para ">
                 {data[0]?.paragraph1}
               </div>
-              <button
+              <Link
+                to="/about"
                 style={{ width: 160, justifyContent: "center" }}
                 className="nav__header__link__btn__filled"
               >
                 Find More
-              </button>
+              </Link>
             </div>
           </div>
         </div>
-
       </div>
 
       <div className="intro__main__container  animate__animated animate__fadeInRight animate__delay-1s">
@@ -232,11 +234,11 @@ export default function HomeScreen() {
       </div>
       <div className="trusted__main__container">
         <div className="trusted__main__container_heading">
-          We are your transparent and trusted partner
+          Digitax Is Your Friendly, Transparent And Trusted Partner
         </div>
         <div className="trusted__main__container_para">
-          Our mission is to help your business grow, especially financially. You
-          can consult anytime
+          Our mission is to ensure your business remains compliant. You can
+          confidentially discuss your VAT obligations with us anytime
         </div>
         <div className="trusted__main__container__contant">
           <TrustCard
@@ -247,7 +249,7 @@ export default function HomeScreen() {
           <TrustCard
             img={transparent}
             title="Transparent"
-            para=" As part of the pillars of our organisation, we make sure to be transparent at every step of our tax processes."
+            para=" In following the constitution of our organisation, transparency is at the heart of every step in the compliance of our tax collection processes."
           />
           <TrustCard
             img={trust}
@@ -257,7 +259,7 @@ export default function HomeScreen() {
           <TrustCard
             img={thumb}
             title="Convenient"
-            para=" We make every process and steps easy by offering risk mitigated and automated service."
+            para="We make every process and steps easy by offering risk mitigated and automated service."
           />
         </div>
       </div>
@@ -272,20 +274,17 @@ export default function HomeScreen() {
         />
         <div className="service__main__section__overay">
           <div className="service__main__section__overay__contant">
-            {
-              testi.map((i,index)=>{
-                return(
-                  <ServicesCard
-                    path="/services-facial-representation"
-                    title={i?.heading}
-                    para={i?.paragraph}
-                    image={i?.image}
-                  />
-
-                )
-              })
-            }
-          
+            {services.map((i, index) => {
+              return (
+                <ServicesCard
+                  path="/services-facial-representation"
+                  title={i?.heading}
+                  para={i?.paragraph}
+                  // image={i?.image}
+                  image={first}
+                />
+              );
+            })}
           </div>
         </div>
       </div>

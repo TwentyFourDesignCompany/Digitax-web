@@ -8,17 +8,24 @@ import guarantee from "../assets/guarantee.png";
 import user from "../assets/user.png";
 import axios from "axios";
 import { URL } from "../component/baseUrl";
-
+import { work } from "../component/work";
 function TestimonialCard(image, message, name) {
-
   return (
-
     <div className="testnomials__main__section__content__card">
       <div className="testnomials__main__section__content__card__img__wrapper">
-        <img src={image?.image} alt="user" className="testnomials__main__section__content__card__img" />
+        <img
+          src={image?.image}
+          alt="user"
+          className="testnomials__main__section__content__card__img"
+        />
       </div>
       <div className="testnomials__main__section__content__card__para">
-        <svg xmlns="http://www.w3.org/2000/svg" width="31.2" height="27.3" viewBox="0 0 31.2 27.3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="31.2"
+          height="27.3"
+          viewBox="0 0 31.2 27.3"
+        >
           <path
             id="Icon_awesome-quote-left"
             data-name="Icon awesome-quote-left"
@@ -52,20 +59,15 @@ function TestimonialCard(image, message, name) {
       <div className="testnomials__main__section__content__card__title">
         {image?.name}
       </div>
-
-
     </div>
-
   );
 }
 
-function HowtoCard({ value,paragraph }) {
+function HowtoCard({ value, paragraph }) {
   return (
     <div className="how__work__section__content__card">
       <div className="how__work__section__content__card__cirle">{value}</div>
-      <div className="how__work__section__content__card__para">
-        {paragraph}
-      </div>
+      <div className="how__work__section__content__card__para">{paragraph}</div>
     </div>
   );
 }
@@ -95,26 +97,29 @@ function HasselCard() {
 }
 
 export default function ServicesIOSS() {
-  const [iossTop, setIossTop] = useState([])
-  const [iossQuestion, setiossQuestion] = useState([])
-  const [work, setwork] = useState([])
-  const [testi, setTesti] = useState([])
+  const [iossTop, setIossTop] = useState([]);
+  const [iossQuestion, setiossQuestion] = useState([]);
+  // const [work, setwork] = useState([]);
+  const [testi, setTesti] = useState([]);
 
   useEffect(() => {
-    axios.get(`${URL}/ioss/text/IOSS`)
+    axios
+      .get(`${URL}/ioss/text/IOSS`)
       .then((res) => setIossTop(res.data))
-      .catch((e) => console.log(e))
-    axios.get(`${URL}/ioss/question/IOSS`)
+      .catch((e) => console.log(e));
+    axios
+      .get(`${URL}/ioss/question/IOSS`)
       .then((res) => setiossQuestion(res.data))
-      .catch((e) => console.log(e))
-    axios.get(`${URL}/work/role/IOSS`)
-      .then((res)=>setwork(res.data))
-      .catch((e)=>console.log(e))
-    axios.get(`${URL}/testimonial`)
+      .catch((e) => console.log(e));
+    axios
+      .get(`${URL}/work/role/IOSS`)
+      .then((res) => setwork(res.data))
+      .catch((e) => console.log(e));
+    axios
+      .get(`${URL}/testimonial`)
       .then((res) => setTesti(res?.data))
-      .catch((e) => console.log(e))
-  }, [])
-
+      .catch((e) => console.log(e));
+  }, []);
 
   return (
     <>
@@ -128,35 +133,31 @@ export default function ServicesIOSS() {
         <div className="service__main__section__overlay">
           <div className="service__main__section__overlay__content">
             <div className="service__main__section__overlay__content__heading">
-              {iossTop[0]?.heading}
+              {/* {iossTop[0]?.heading} */}
+              IMPORT ONE STOP SHOP (IOSS)
             </div>
             <div className="service__main__section__overlay__content__para">
               {iossTop[0]?.paragraph}
-
             </div>
-            <button className="nav__header__link__btn__filled">
+            {/* <button className="nav__header__link__btn__filled">
               Get a Quote
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
       <div className="service__main__section__more__about">
-        {
-          iossQuestion.map((i, index) => {
-            return (
-              <div key={index}>
-                <div className="service__main__section__more__about__heading">
-                  {i?.question}
-                </div>
-                <div className="service__main__section__more__about__para">
-                  {i?.answer}
-                </div>
-
-
+        {iossQuestion.map((i, index) => {
+          return (
+            <div key={index}>
+              <div className="service__main__section__more__about__heading">
+                {i?.question}
               </div>
-            )
-          })
-        }
+              <div className="service__main__section__more__about__para">
+                {i?.answer}
+              </div>
+            </div>
+          );
+        })}
         <div className="service__main__section__more__about__heading">
           How can our IOSS service help you?
         </div>
@@ -174,25 +175,23 @@ export default function ServicesIOSS() {
       <div className="how__work__section">
         <div className="how__work__section__heading">How Does it work?</div>
         <div className="how__work__section__content">
-          {
-            work?.map((i,index)=>{
-              return (
-                <HowtoCard value={index+1} paragraph={i.paragraph} />
-              )
-            })
-          }
+          {work?.map((i, index) => {
+            return <HowtoCard value={index + 1} paragraph={i.paragraph} />;
+          })}
         </div>
       </div>
       <div className="testnomials__main__section">
         <div className="testnomials__main__section__heading">Testimonials</div>
-        <div className="testnomials__main__section__content" >
-          {
-            testi?.map((i, index) => {
-              return (
-                <TestimonialCard name={i?.name} image={i?.image} message={i?.message} />
-              )
-            })
-          }
+        <div className="testnomials__main__section__content">
+          {testi?.map((i, index) => {
+            return (
+              <TestimonialCard
+                name={i?.name}
+                image={i?.image}
+                message={i?.message}
+              />
+            );
+          })}
         </div>
       </div>
       <NewsSection />

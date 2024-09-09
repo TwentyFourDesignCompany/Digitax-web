@@ -8,17 +8,25 @@ import founder_pic from "../assets/founder_pic.png";
 import user from "../assets/user.png";
 import axios from "axios";
 import { URL } from "../component/baseUrl";
+import about from "../assets/about.png";
 
 function TestimonialCard(image, message, name) {
-
   return (
-
     <div className="testnomials__main__section__content__card">
       <div className="testnomials__main__section__content__card__img__wrapper">
-        <img src={image?.image} alt="user" className="testnomials__main__section__content__card__img" />
+        <img
+          src={image?.image}
+          alt="user"
+          className="testnomials__main__section__content__card__img"
+        />
       </div>
       <div className="testnomials__main__section__content__card__para">
-        <svg xmlns="http://www.w3.org/2000/svg" width="31.2" height="27.3" viewBox="0 0 31.2 27.3">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="31.2"
+          height="27.3"
+          viewBox="0 0 31.2 27.3"
+        >
           <path
             id="Icon_awesome-quote-left"
             data-name="Icon awesome-quote-left"
@@ -52,31 +60,30 @@ function TestimonialCard(image, message, name) {
       <div className="testnomials__main__section__content__card__title">
         {image?.name}
       </div>
-
-
     </div>
-
   );
 }
 
 export default function AboutUsScreen() {
-  const [data, setData] = useState([])
-  const [testi, setTesti] = useState([])
+  const [data, setData] = useState([]);
+  const [testi, setTesti] = useState([]);
   useEffect(() => {
-    axios.get(`${URL}/about`)
+    axios
+      .get(`${URL}/about`)
       .then((res) => setData(res?.data))
-      .catch((e) => console.log(e))
-    axios.get(`${URL}/testimonial`)
+      .catch((e) => console.log(e));
+    axios
+      .get(`${URL}/testimonial`)
       .then((res) => setTesti(res?.data))
-      .catch((e) => console.log(e))
-  }, [])
+      .catch((e) => console.log(e));
+  }, []);
 
   return (
     <>
       <Header />
       <div className="service__main__section">
         <img
-          src={data[0]?.image}
+          src={about}
           alt="about_bg"
           className="service__main__section__img"
         />
@@ -88,28 +95,47 @@ export default function AboutUsScreen() {
             <div className="service__main__section__overlay__content__para">
               SELLING ACROSS BORDERS{" "}
             </div>
-            <button className="nav__header__link__btn__filled">
+            {/* <button className="nav__header__link__btn__filled">
               Get a Quote
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
       <div className="service__main__section__more__about">
         <div className="service__main__section__more__about__para">
-          {data[0]?.paragraph}
+          {/* {data[0]?.paragraph} */}
+          Digitax Group Limited, as a thought leader in Africa, is disrupting
+          this marketplace by automating the fiscal representation process and
+          offering numerous risk- mitigated, automated services around it, such
+          as compliance and testing automation, payments facilitation, and
+          support services to facilitate the timely payment of VAT by SMEs and
+          MNCs. This enables merchants to be more easily comply with tax
+          regulations whilst reducing their administrative burden and cost of
+          compliance. Tax authorities in turn need a trusted intermediary such
+          as Digitax with which to work and through which these taxes can be
+          collected and the relationship with the taxpayer more efficiently
+          managed. As this initiative grows, Digitax is the trusted partner for
+          each merchant providing the necessary support to the merchants and the
+          confidence to the tax authority that SMEs/MNCs are operating
+          compliantly within the ecosystem. Digitax’s management team has the
+          credibility to lead this compliance ecosystem, which includes Tax
+          authorities, channel partners (accounting firms, law firms, specialist
+          consultants) and e-commerce platforms, alongside the non-resident
+          merchants, into a compliant win-win position.
         </div>
-
       </div>
       <div className="testnomials__main__section">
         <div className="testnomials__main__section__heading">Testimonials</div>
-        <div className="testnomials__main__section__content" >
-          {
-            testi?.map((i, index) => {
-              return (
-                <TestimonialCard name={i?.name} image={i?.image} message={i?.message} />
-              )
-            })
-          }
+        <div className="testnomials__main__section__content">
+          {testi?.map((i, index) => {
+            return (
+              <TestimonialCard
+                name={i?.name}
+                image={i?.image}
+                message={i?.message}
+              />
+            );
+          })}
         </div>
       </div>
       <NewsSection />

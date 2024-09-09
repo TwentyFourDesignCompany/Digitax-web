@@ -1103,12 +1103,22 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 30px;
+  margin-bottom: 20px;
 }
 .how__work__section__content__card__para {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.7);
   margin-top: 0.3em;
   text-align: center;
+}
+.how__work__section__content__card__title {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.7);
+  margin-top: 0.3em;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: 600;
 }
 .testnomials__main__section {
   width: 100%;
