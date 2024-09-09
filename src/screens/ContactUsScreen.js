@@ -9,10 +9,9 @@ import contact_main_bg from "../assets/contact_main_bg.png";
 // import location from "../assets/location.png";
 import contact_bg from "../assets/contact_bg.png";
 import user from "../assets/user.png";
-import axios from 'axios'
-import {URL} from '../component/baseUrl'
+import axios from "axios";
+import { URL } from "../component/baseUrl";
 function TestimonialCard() {
-
   return (
     <div className="testnomials__main__section__content__card">
       <div className="testnomials__main__section__content__card__img__wrapper">
@@ -69,13 +68,14 @@ function TestimonialCard() {
 }
 
 export default function ContactUsScreen() {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
   useEffect(() => {
-    axios.get(`${URL}/contact`)
+    axios
+      .get(`${URL}/contact`)
       .then((res) => setData(res.data))
-      .catch((e) => console.log(e))
-  }, [])
-  console.log(data)
+      .catch((e) => console.log(e));
+  }, []);
+  console.log(data);
   return (
     <>
       <Header />
@@ -109,12 +109,12 @@ export default function ContactUsScreen() {
           <div className="contact__main__section__overlay__content">
             <div className="contact__main__section__left">
               <div className="contact__main__section__left__heading">
-              {data[0]?.heading}
+                {data[0]?.heading}
               </div>
               <div className="contact__main__section__left__para">
-              {data[0]?.paragraph2}              
+                {data[0]?.paragraph2}
               </div>
-              <div className="contact__main__section__left__social">
+              {/* <div className="contact__main__section__left__social">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -137,7 +137,7 @@ export default function ContactUsScreen() {
                   {data[0]?.phone}
                   </div>
                 </div>
-              </div>
+              </div> */}
               <div className="contact__main__section__left__social">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -159,7 +159,8 @@ export default function ContactUsScreen() {
                     Email
                   </div>
                   <div className="contact__main__section__left__social__para">
-                  {data[0]?.email}
+                    {/* {data[0]?.email} */}
+                    info@digitaxgroup.tax
                   </div>
                 </div>
               </div>
@@ -184,7 +185,14 @@ export default function ContactUsScreen() {
                     Location
                   </div> */}
                   <div className="contact__main__section__left__social__para">
-                    {data[0]?.address}
+                    {/* {data[0]?.address} */}
+                    <span>London Office:</span> UK: Registered Office: Digitax
+                    Group Limited, 20-22 Wenlock Road, London, England, N1 7GU
+                  </div>
+                  <div className="contact__main__section__left__social__para">
+                    <span>Nigeria Office:</span> Registered Office (Regional
+                    Head Office and Operations): First Floor, Providence House,
+                    15 Admiralty Way, Lekki Phase 1, Lagos, Nigeria
                   </div>
                 </div>
               </div>
