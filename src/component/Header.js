@@ -185,6 +185,16 @@ export default class Header extends Component {
                 Contact Us
               </Link>
               <Link
+                to="/about#partners"
+                className="nav__header__link"
+                onClick={() => {
+                  // Remove the smooth scrolling here
+                  // window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Partners & Compliance
+              </Link>
+              {/* <Link
                 to="/login"
                 className="nav__header__link__btn"
                 onClick={() => {
@@ -192,8 +202,8 @@ export default class Header extends Component {
                 }}
               >
                 Login
-              </Link>
-              <Link
+              </Link> */}
+              {/* <Link
                 to="/sign-up"
                 className="nav__header__link__btn__filled"
                 onClick={() => {
@@ -201,7 +211,7 @@ export default class Header extends Component {
                 }}
               >
                 Create Account
-              </Link>
+              </Link> */}
             </div>
           ) : null}
         </div>

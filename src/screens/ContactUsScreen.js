@@ -11,6 +11,9 @@ import contact_bg from "../assets/contact_bg.png";
 import user from "../assets/user.png";
 import axios from "axios";
 import { URL } from "../component/baseUrl";
+import digitax_logo from "../assets/logo.png";
+import andersen_logo from "../assets/andersen.png";
+import firs from "../assets/firs.png";
 function TestimonialCard() {
   return (
     <div className="testnomials__main__section__content__card">
@@ -79,6 +82,7 @@ export default function ContactUsScreen() {
   return (
     <>
       <Header />
+
       <div className="service__main__section">
         <img
           src={contact_main_bg}
@@ -97,6 +101,75 @@ export default function ContactUsScreen() {
               Contact US
             </a>
           </div>
+        </div>
+      </div>
+      <div className="service__main__section__more__about">
+        <div className="service__main__section__more__about__para">
+          <h1>For further information please contact </h1>
+          <img
+            src={digitax_logo}
+            alt="digitax_logo"
+            style={{ width: "200px", height: "auto" }}
+          />
+          <h3>
+            Digitax Group Limited:
+            <a href="mailto:info@digitaxgroup.com">
+              info@digitaxgroup.com
+            </a>{" "}
+          </h3>
+
+          <p>
+            <span>London Office:</span> Andersen Place, 5 Osborne Road, Ikoyi
+            Lagos, Nigeria
+          </p>
+          <p>
+            <span>Lagos Office:</span> 3rd Floor, 47 Glover Road, Ikoyi 106104,
+            Lagos, Nigeria
+          </p>
+          <p>
+            <span>Abuja Office:</span> Yobe Investment House, Plot 1332 Ralph
+            Shodeinde Street, CBD, Abuja.
+          </p>
+          <img
+            src={andersen_logo}
+            alt="andersen_logo"
+            style={{ width: "200px", height: "auto" }}
+          />
+          <h3>
+            Andersen Tax:{" "}
+            <a href="mailto:info@ng.Andersen.com">info@ng.Andersen.com</a>
+          </h3>
+
+          <p>
+            <span>Lagos Office:</span> Andersen Place, 5 Osborne Road, Ikoyi
+            Lagos, Nigeria
+          </p>
+          <p>
+            <span>Abuja Office:</span> Suite 302, Yobe Investment House, Plot
+            1332 Ralph Shodeinde Street, CBD, Abuja, Nigeria
+          </p>
+
+          <h3>
+            Desucla Limited:{" "}
+            <a href="mailto:Support@desucla.com">Support@desucla.com</a>{" "}
+          </h3>
+
+          <p>
+            {" "}
+            <span>London Office:</span> 29 Euston Road, London, NW1 2SD, England
+          </p>
+          <img
+            src={firs}
+            alt="firs"
+            style={{ width: "200px", height: "auto" }}
+          />
+          <h3>Federal Inland Revenue Service (FIRS): </h3>
+
+          <p>
+            <span>Head Office:</span> Revenue House, 20 Sokode Crescent, Wuse
+            Zone 5, Abuja, Nigeria
+          </p>
+          <a href="https://www.firs.gov.ng/">https://www.firs.gov.ng/</a>
         </div>
       </div>
       <div id="contact" className="contact__main__section">
@@ -138,6 +211,7 @@ export default function ContactUsScreen() {
                   </div>
                 </div>
               </div> */}
+
               <div className="contact__main__section__left__social">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -154,6 +228,7 @@ export default function ContactUsScreen() {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                   <polyline points="22,6 12,13 2,6"></polyline>
                 </svg>
+
                 <div className="contact__main__section__left__social__heading__wrapper">
                   <div className="contact__main__section__left__social__heading">
                     Email

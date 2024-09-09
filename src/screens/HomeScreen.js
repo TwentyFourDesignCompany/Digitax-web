@@ -212,7 +212,7 @@ export default function HomeScreen() {
                 style={{ width: 160, justifyContent: "center" }}
                 className="nav__header__link__btn__filled"
               >
-                Find More
+                Read More
               </Link>
             </div>
           </div>
@@ -277,6 +277,7 @@ export default function HomeScreen() {
             {services.map((i, index) => {
               return (
                 <ServicesCard
+                  key={index}
                   path="/services-facial-representation"
                   title={i?.heading}
                   para={i?.paragraph}
@@ -287,6 +288,41 @@ export default function HomeScreen() {
             })}
           </div>
         </div>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          flexDirection: "column",
+          width: "80%",
+          marginRight: "auto",
+          marginLeft: "auto",
+        }}
+      >
+        <p style={{ textAlign: "center" }}>
+          <h1>Representation</h1>
+          FIRS needs a point of constructive interaction within its non-resident
+          taxpayer base. It can achieve this through Digitax because: Digitax
+          operates on an international basis with rep offices in the UK, USA and
+          associate firms in the rest of Africa. Wherever you are Digitax can
+          provide a local point of contact in your time zone. The Digitax team
+          has long-standing relationships with FIRS over decades of working
+          together on client tax and compliance matters. Digitax is part of the
+          Desucla representation network using Desucla technology in respect of
+          both compliance management and tax payments.
+          <h1>Support</h1>
+          In Nigeria, Digitax is advised by Andersen Nigeria a leading local tax
+          firm and part of the Andersen Global network giving us access to world
+          class tax experts on a global basis.
+          <h1>Tax Payments</h1>
+          Using Desucla’s Taxpay infrastructure we can collect tax payments due
+          to FIRS in the US, UK, Europe and Asia and convert them into Naira
+          payments for onward settlement.
+          <h1>Registration</h1>
+          To sign up go to <a href="www.desucla.com">www.desucla.com</a> and
+          choose Nigeria from the drop down country list.
+        </p>
       </div>
       <NewsSection />
       <div id="contact" className="contact__main__section">
