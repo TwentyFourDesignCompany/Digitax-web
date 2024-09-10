@@ -48,7 +48,7 @@ export default function Footer() {
             Home
           </Link>
           <Link
-            to="/services"
+            to="/services-facial-representation"
             className="footer__overlay__content__col__entry"
             onClick={() => {
               window.scrollTo({
@@ -118,7 +118,7 @@ export default function Footer() {
         </div>
         <div className="footer__overlay__content__col">
           <div className="footer__overlay__content__col__heading">Services</div>
-          <Link
+          {/* <Link
             to="/services"
             className="footer__overlay__content__col__entry"
             onClick={() => {
@@ -129,7 +129,7 @@ export default function Footer() {
             }}
           >
             IOSS
-          </Link>
+          </Link> */}
           <Link
             to="/services-facial-representation"
             className="footer__overlay__content__col__entry"

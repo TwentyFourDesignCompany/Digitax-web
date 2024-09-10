@@ -127,7 +127,7 @@ export default class Header extends Component {
               >
                 Services
                 <div className="nav__header__link__dropdown">
-                  <Link
+                  {/* <Link
                     to="/services"
                     className="nav__header__link__entry"
                     onClick={() => {
@@ -135,7 +135,7 @@ export default class Header extends Component {
                     }}
                   >
                     IOSS
-                  </Link>
+                  </Link> */}
                   <Link
                     to="/services-facial-representation"
                     className="nav__header__link__entry"
