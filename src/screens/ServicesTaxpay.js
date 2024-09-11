@@ -147,7 +147,7 @@ export default function ServicesTaxpay() {
           Join Us
         </button>
       </div>
-      <NewsSection />
+      {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />
     </>

@@ -416,7 +416,7 @@ export default function ContactUsScreen() {
         </div>
       </div>
 
-      <NewsSection />
+      {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />
     </>

@@ -117,6 +117,16 @@ export default function AboutUsScreen() {
       <div className="service__main__section__more__about">
         <div className="service__main__section__more__about__para">
           {/* {data[0]?.paragraph} */}
+          <h1>About Digitax Group</h1>
+          <p>
+            Digitax provides an interface with the Nigerian tax authority to
+            assist with the tax compliance process and timely settlement of
+            taxes due. Digitax works primarily but not exclusively with
+            non-resident businesses. Digitax represents merchants of all sizes
+            which need to file returns and pay tax in Nigeria. If you have
+            customers outside of Nigeria but in the rest of Africa then Digitax
+            has a network of advisers and contacts that can support you.​
+          </p>
           <h1>Background</h1>
           <p>
             The world's taxation system over the last decade has been moving
@@ -275,7 +285,7 @@ export default function AboutUsScreen() {
           })}
         </div>
       </div>
-      <NewsSection />
+      {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />
     </>

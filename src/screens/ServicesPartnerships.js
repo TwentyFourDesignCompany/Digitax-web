@@ -149,7 +149,7 @@ export default function ServicesPartnerships() {
           Join Us
         </button>
       </div>
-      <NewsSection />
+      {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />
     </>

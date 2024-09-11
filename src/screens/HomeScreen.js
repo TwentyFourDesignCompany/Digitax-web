@@ -201,11 +201,20 @@ export default function HomeScreen() {
           <div className="home__main__container__overlay__content">
             <div className="home__main__container__left ">
               <div className="home__main__container__heading ">
-                {data[0]?.title1}
-                <span>{data[0]?.vate}</span>
+                {/* {data[0]?.title1} */}
+                DIGITAX IS AN AUTHORIZED TAX REPRESENTATIVE IN NIGERIA
+                SPECIALISING IN THE REPRESENTATION OF NON-RESIDENT BUSINESSES
+                WHICH HAVE CUSTOMERS IN NIGERIA.
+                {/* <span>{data[0]?.vate}</span> */}
               </div>
               <div className="home__main__container__para ">
-                {data[0]?.paragraph1}
+                {/* {data[0]?.paragraph1} */}
+                <p>
+                  DIGITAX REPRESENTS MERCHANTS OF ALL SIZES WHICH NEED TO FILE
+                  RETURNS AND PAY TAX IN NIGERIA. IF YOU HAVE CUSTOMERS OUTSIDE
+                  OF NIGERIA BUT IN THE REST OF AFRICA THEN DIGITAX HAS A
+                  NETWORK OF ADVISERS AND CONTACTS THAT CAN SUPPORT YOU.
+                </p>
               </div>
               <Link
                 to="/about"
@@ -324,7 +333,7 @@ export default function HomeScreen() {
           choose Nigeria from the drop down country list.
         </p>
       </div>
-      <NewsSection />
+      {/* <NewsSection /> */}
       <div id="contact" className="contact__main__section">
         <img
           src={contact_bg}
@@ -410,8 +419,8 @@ export default function HomeScreen() {
                     Location
                   </div> */}
                   <div className="contact__main__section__left__social__para">
-                    <span>London Office:</span> UK: Registered Office: Digitax
-                    Group Limited, 20-22 Wenlock Road, London, England, N1 7GU
+                    <span>London Office:</span> Andersen Place, 5 Osborne Road,
+                    Ikoyi Lagos, Nigeria
                   </div>
                   <div className="contact__main__section__left__social__para">
                     <span>Nigeria Office:</span> Registered Office (Regional

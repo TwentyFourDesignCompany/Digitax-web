@@ -194,7 +194,7 @@ export default function ServicesIOSS() {
           })}
         </div>
       </div>
-      <NewsSection />
+      {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />
     </>

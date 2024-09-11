@@ -221,7 +221,7 @@ export default function ServicesFacialRepresentation() {
           })}
         </div>
       </div>
-      <NewsSection />
+      {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />
     </>

@@ -7,9 +7,9 @@ export const services = [
   },
   {
     id: 2,
-    heading: "IMPORT ONE STOP SHOP",
+    heading: "Support",
     paragraph:
-      "This is the European Union’s new VAT regime for low value B2C packages under €150. Through our our affiliate network partnerships, we are monitoring the evolution of this compliance system, with a view to adopting suitable elements as required within Middle East & Africa (MEA).",
+      "In Nigeria, Digitax is advised by Andersen Nigeria a leading local tax firm and part of the Andersen Global network giving us access to world class tax experts on a global basis.",
   },
   {
     id: 3,
