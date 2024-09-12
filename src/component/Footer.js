@@ -118,18 +118,7 @@ export default function Footer() {
         </div>
         <div className="footer__overlay__content__col">
           <div className="footer__overlay__content__col__heading">Services</div>
-          {/* <Link
-            to="/services"
-            className="footer__overlay__content__col__entry"
-            onClick={() => {
-              window.scrollTo({
-                top: 0,
-                behavior: "smooth",
-              });
-            }}
-          >
-            IOSS
-          </Link> */}
+
           <Link
             to="/services-facial-representation"
             className="footer__overlay__content__col__entry"
@@ -165,6 +154,18 @@ export default function Footer() {
             }}
           >
             Partnerships
+          </Link>
+          <Link
+            to="/services"
+            className="footer__overlay__content__col__entry"
+            onClick={() => {
+              window.scrollTo({
+                top: 0,
+                behavior: "smooth",
+              });
+            }}
+          >
+            Support
           </Link>
         </div>
       </div>

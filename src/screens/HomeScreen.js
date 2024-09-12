@@ -231,13 +231,32 @@ export default function HomeScreen() {
       <div className="intro__main__container  animate__animated animate__fadeInRight animate__delay-1s">
         <div className="intro__main__container__contant">
           <div className="intro__main__container__contant__sub__heading">
-            {data[0]?.affilate}
+            {/* {data[0]?.affilate} */}
+            Introduction To Non Resident Tax Collection
           </div>
-          <div className="intro__main__container__contant__heading">
+          {/* <div className="intro__main__container__contant__heading">
             {data[0]?.title2}
-          </div>
+          </div> */}
           <div className="intro__main__container__contant__para">
-            {data[0]?.paragraph2}
+            {/* {data[0]?.paragraph2} */}
+            The world’s taxation system over the last decade has been moving
+            increasingly to a regime which is based on location of customers
+            rather than location of legal entities. In Nigeria legislation was
+            enacted in 2022 which began this process of bringing non-resident
+            merchants into the scope of Nigerian VAT and DST. Digitax is the
+            first agent authorised by the Nigerian tax authority (FIRS) to focus
+            on the needs of non-resident businesses which have customers in
+            Nigeria and which therefore may become liable to pay Nigerian tax.
+            Digitax therefore provides both the necessary support to
+            non-resident merchants and the confidence to the tax authorities
+            that merchants are operating within an ecosystem that is compliant
+            with regard to Nigerian law. This enables merchants to more easily
+            comply with tax regulations whilst reducing the administrative
+            burden and cost of compliance. Tax authorities in turn need a
+            trusted intermediary such as Digitax through which these taxes can
+            be collected and through which they can request information from
+            merchants in respect of queries they may have or for the purpose of
+            hosting and managing local tax audits.
           </div>
         </div>
       </div>
@@ -287,7 +306,7 @@ export default function HomeScreen() {
               return (
                 <ServicesCard
                   key={index}
-                  path="/services-facial-representation"
+                  path={i?.path}
                   title={i?.heading}
                   para={i?.paragraph}
                   // image={i?.image}
@@ -310,27 +329,10 @@ export default function HomeScreen() {
         }}
       >
         <p style={{ textAlign: "center" }}>
-          <h1>Representation</h1>
-          FIRS needs a point of constructive interaction within its non-resident
-          taxpayer base. It can achieve this through Digitax because: Digitax
-          operates on an international basis with rep offices in the UK, USA and
-          associate firms in the rest of Africa. Wherever you are Digitax can
-          provide a local point of contact in your time zone. The Digitax team
-          has long-standing relationships with FIRS over decades of working
-          together on client tax and compliance matters. Digitax is part of the
-          Desucla representation network using Desucla technology in respect of
-          both compliance management and tax payments.
-          <h1>Support</h1>
-          In Nigeria, Digitax is advised by Andersen Nigeria a leading local tax
-          firm and part of the Andersen Global network giving us access to world
-          class tax experts on a global basis.
-          <h1>Tax Payments</h1>
-          Using Desucla’s Taxpay infrastructure we can collect tax payments due
-          to FIRS in the US, UK, Europe and Asia and convert them into Naira
-          payments for onward settlement.
           <h1>Registration</h1>
-          To sign up go to <a href="www.desucla.com">www.desucla.com</a> and
-          choose Nigeria from the drop down country list.
+          To sign up go to{" "}
+          <a href="https://www.desucla.com/">www.desucla.com</a> and choose
+          Nigeria from the drop down country list.
         </p>
       </div>
       {/* <NewsSection /> */}

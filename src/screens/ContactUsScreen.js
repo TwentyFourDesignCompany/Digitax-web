@@ -261,8 +261,8 @@ export default function ContactUsScreen() {
                   </div> */}
                   <div className="contact__main__section__left__social__para">
                     {/* {data[0]?.address} */}
-                    <span>London Office:</span> UK: Registered Office: Digitax
-                    Group Limited, 20-22 Wenlock Road, London, England, N1 7GU
+                    <span>London Office:</span> Andersen Place, 5 Osborne Road,
+                    Ikoyi Lagos, Nigeria
                   </div>
                   <div className="contact__main__section__left__social__para">
                     <span>Nigeria Office:</span> Registered Office (Regional

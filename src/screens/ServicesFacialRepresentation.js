@@ -207,7 +207,7 @@ export default function ServicesFacialRepresentation() {
           })}
         </div>
       </div>
-      <div className="testnomials__main__section">
+      {/* <div className="testnomials__main__section">
         <div className="testnomials__main__section__heading">Testimonials</div>
         <div className="testnomials__main__section__content">
           {testi?.map((i, index) => {
@@ -220,7 +220,7 @@ export default function ServicesFacialRepresentation() {
             );
           })}
         </div>
-      </div>
+      </div> */}
       {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />

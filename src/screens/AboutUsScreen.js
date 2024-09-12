@@ -271,7 +271,7 @@ export default function AboutUsScreen() {
           </p>
         </div>
       </div>
-      <div className="testnomials__main__section">
+      {/* <div className="testnomials__main__section">
         <div className="testnomials__main__section__heading">Testimonials</div>
         <div className="testnomials__main__section__content">
           {testi?.map((i, index) => {
@@ -284,7 +284,7 @@ export default function AboutUsScreen() {
             );
           })}
         </div>
-      </div>
+      </div> */}
       {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />

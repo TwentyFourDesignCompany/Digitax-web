@@ -134,10 +134,10 @@ export default function ServicesIOSS() {
           <div className="service__main__section__overlay__content">
             <div className="service__main__section__overlay__content__heading">
               {/* {iossTop[0]?.heading} */}
-              IMPORT ONE STOP SHOP (IOSS)
+              Support
             </div>
             <div className="service__main__section__overlay__content__para">
-              {iossTop[0]?.paragraph}
+              {/* {iossTop[0]?.paragraph} */}
             </div>
             {/* <button className="nav__header__link__btn__filled">
               Get a Quote
@@ -146,7 +146,14 @@ export default function ServicesIOSS() {
         </div>
       </div>
       <div className="service__main__section__more__about">
-        {iossQuestion.map((i, index) => {
+        <div className="service__main__section__more__about__para">
+          <p>
+            In Nigeria, Digitax is advised by Andersen Nigeria a leading local
+            tax firm and part of the Andersen Global network giving us access to
+            world class tax experts on a global basis.
+          </p>
+        </div>
+        {/* {iossQuestion.map((i, index) => {
           return (
             <div key={index}>
               <div className="service__main__section__more__about__heading">
@@ -157,44 +164,30 @@ export default function ServicesIOSS() {
               </div>
             </div>
           );
-        })}
-        <div className="service__main__section__more__about__heading">
+        })} */}
+        {/* <div className="service__main__section__more__about__heading">
           How can our IOSS service help you?
-        </div>
-        <div className="service__main__section__more__about__card__wrapper">
+        </div> */}
+        {/* <div className="service__main__section__more__about__card__wrapper">
           <HasselCard />
           <HasselCard />
           <HasselCard />
-        </div>
-        <div className="service__main__section__more__about__card__wrapper">
+        </div> */}
+        {/* <div className="service__main__section__more__about__card__wrapper">
           <HasselCard />
           <HasselCard />
           <HasselCard />
-        </div>
+        </div> */}
       </div>
-      <div className="how__work__section">
+      {/* <div className="how__work__section">
         <div className="how__work__section__heading">How Does it work?</div>
         <div className="how__work__section__content">
           {work?.map((i, index) => {
             return <HowtoCard value={index + 1} paragraph={i.paragraph} />;
           })}
         </div>
-      </div>
-      <div className="testnomials__main__section">
-        <div className="testnomials__main__section__heading">Testimonials</div>
-        <div className="testnomials__main__section__content">
-          {testi?.map((i, index) => {
-            return (
-              <TestimonialCard
-                name={i?.name}
-                image={i?.image}
-                message={i?.message}
-              />
-            );
-          })}
-        </div>
-      </div>
-      {/* <NewsSection /> */}
+      </div> */}
+      /{/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />
     </>

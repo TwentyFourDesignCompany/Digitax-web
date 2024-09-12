@@ -68,7 +68,7 @@ export default function ServicesPartnerships() {
         </div>
       </div>
       <div className="service__main__section__more__about">
-        {iossQuestion.map((i, index) => {
+        {/* {iossQuestion.map((i, index) => {
           return (
             <div key={index}>
               <div className="service__main__section__more__about__heading">
@@ -79,16 +79,16 @@ export default function ServicesPartnerships() {
               </div>
             </div>
           );
-        })}
+        })} */}
       </div>
-      <div className="how__work__section">
+      {/* <div className="how__work__section">
         <div className="how__work__section__heading">How Does it work?</div>
         <div className="how__work__section__content">
           {work?.map((i, index) => {
             return <HowtoCard value={index + 1} paragraph={i.paragraph} />;
           })}
         </div>
-      </div>
+      </div> */}
       <div className="trusted__main__container">
         <div className="trusted__main__container_heading">
           We are your transparent and trusted partner
@@ -120,7 +120,7 @@ export default function ServicesPartnerships() {
           />
         </div>
       </div>
-      <div className="our__client__says__main__section">
+      {/* <div className="our__client__says__main__section">
         <div className="our__client__says__main__section__content">
           <div className="our__client__says__main__section__heading">
             What our Client say...
@@ -132,8 +132,8 @@ export default function ServicesPartnerships() {
             facilis expedita accusantium modi.
           </div>
         </div>
-      </div>
-      <div className="join us__says__main__section">
+      </div> */}
+      {/* <div className="join us__says__main__section">
         <div className="join__us__says__main__section__heading">
           Join Us Today!
         </div>
@@ -148,7 +148,7 @@ export default function ServicesPartnerships() {
         >
           Join Us
         </button>
-      </div>
+      </div> */}
       {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />

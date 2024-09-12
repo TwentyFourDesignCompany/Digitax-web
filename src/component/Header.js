@@ -121,21 +121,12 @@ export default class Header extends Component {
               </Link>
               <a
                 className="nav__header__link__drop"
-                onClick={() => {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                }}
+                // onClick={() => {
+                //   window.scrollTo({ top: 0, behavior: "smooth" });
+                // }}
               >
                 Services
                 <div className="nav__header__link__dropdown">
-                  {/* <Link
-                    to="/services"
-                    className="nav__header__link__entry"
-                    onClick={() => {
-                      window.scrollTo({ top: 0, behavior: "smooth" });
-                    }}
-                  >
-                    IOSS
-                  </Link> */}
                   <Link
                     to="/services-facial-representation"
                     className="nav__header__link__entry"
@@ -162,6 +153,15 @@ export default class Header extends Component {
                     }}
                   >
                     Partnerships
+                  </Link>
+                  <Link
+                    to="/services"
+                    className="nav__header__link__entry"
+                    onClick={() => {
+                      window.scrollTo({ top: 0, behavior: "smooth" });
+                    }}
+                  >
+                    Support
                   </Link>
                 </div>
               </a>

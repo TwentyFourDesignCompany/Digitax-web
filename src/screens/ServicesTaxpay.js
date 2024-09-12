@@ -66,7 +66,7 @@ export default function ServicesTaxpay() {
         </div>
       </div>
       <div className="service__main__section__more__about">
-        {iossQuestion.map((i, index) => {
+        {/* {iossQuestion.map((i, index) => {
           return (
             <div key={index}>
               <div className="service__main__section__more__about__heading">
@@ -77,16 +77,21 @@ export default function ServicesTaxpay() {
               </div>
             </div>
           );
-        })}
+        })} */}
+        <div className="service__main__section__more__about__para">
+          Using Desucla’s Taxpay infrastructure we can collect tax payments due
+          to FIRS in the US, UK, Europe and Asia and convert them into Naira
+          payments for onward settlement.
+        </div>
       </div>
-      <div className="how__work__section">
+      {/* <div className="how__work__section">
         <div className="how__work__section__heading">How Does it work?</div>
         <div className="how__work__section__content">
           {work?.map((i, index) => {
             return <HowtoCard value={index + 1} paragraph={i.paragraph} />;
           })}
         </div>
-      </div>
+      </div> */}
       <div className="trusted__main__container">
         <div className="trusted__main__container_heading">
           We are your transparent and trusted partner
@@ -118,7 +123,7 @@ export default function ServicesTaxpay() {
           />
         </div>
       </div>
-      <div className="our__client__says__main__section">
+      {/* <div className="our__client__says__main__section">
         <div className="our__client__says__main__section__content">
           <div className="our__client__says__main__section__heading">
             What our Client say...
@@ -130,8 +135,8 @@ export default function ServicesTaxpay() {
             facilis expedita accusantium modi.
           </div>
         </div>
-      </div>
-      <div className="join us__says__main__section">
+      </div> */}
+      {/* <div className="join us__says__main__section">
         <div className="join__us__says__main__section__heading">
           Join Us Today!
         </div>
@@ -146,7 +151,7 @@ export default function ServicesTaxpay() {
         >
           Join Us
         </button>
-      </div>
+      </div> */}
       {/* <NewsSection /> */}
       <SubscribeSection />
       <Footer />
